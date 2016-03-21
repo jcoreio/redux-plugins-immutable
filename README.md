@@ -4,6 +4,7 @@ Asynchronously load Redux reducers and middleware, React Components, etc. in app
 
 ## Requirements
 
+* ES6 polyfills (corejs)
 * Your Redux state must be an Immutable.js keyed collection.  If you want to use this library
   with POJOs, you'll have to port it to do so.
 
