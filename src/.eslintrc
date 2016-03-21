@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "ecmaFeatures": {
+    "modules": true,
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "no-unused-vars": [1, {"args": "none", "varsIgnorePattern": "React"}],
+    "strict": 0,
+  },
+  "env": {
+    "browser": true
+  }
+}
