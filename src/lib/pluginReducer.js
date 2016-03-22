@@ -1,7 +1,7 @@
 /* @flow */
 
 import Immutable from 'immutable';
-import warning from 'fbjs/lib/warning';
+import warning from 'warning';
 
 import {createSelector} from 'reselect';
 
