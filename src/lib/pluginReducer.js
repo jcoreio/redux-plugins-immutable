@@ -1,6 +1,6 @@
 /* @flow */
 
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import warning from 'warning';
 
 import {createSelector} from 'reselect';

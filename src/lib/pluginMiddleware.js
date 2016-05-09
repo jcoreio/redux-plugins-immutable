@@ -1,4 +1,4 @@
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import Promise from 'bluebird';
 
 import {createSelector} from 'reselect';
