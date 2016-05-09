@@ -1,6 +1,6 @@
 /* @flow */
 
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import type {LoadStatus} from './pluginTypes';
 import type {Action} from './reduxTypes';
 
