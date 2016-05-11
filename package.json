@@ -1,6 +1,6 @@
 {
   "name": "redux-plugins-immutable",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a powerful app plugin system for redux using immutable state",
   "main": "dist/index.js",
   "scripts": {
@@ -41,12 +41,12 @@
     "redux": "^3.3.1"
   },
   "peerDependencies": {
-    "immutable": "^3.8.1",
-    "redux": "^3.3.1"
+    "immutable": "^3.0.0",
+    "redux": "^3.0.0",
+    "bluebird": "^3.0.0",
+    "mindfront-redux-utils": "^1.0.4"
   },
   "dependencies": {
-    "bluebird": "^3.3.4",
-    "mindfront-redux-utils": "^1.0.1",
     "reselect": "^2.2.1",
     "warning": "^2.1.0"
   }
