@@ -10,9 +10,9 @@ A feature-oriented programming framework for [Redux](redux.js.org).  Asynchronou
 
 ## Ecosystem
 
-* [redux-plugins-immutable-react](http://github.com/jcoreio/redux-plugins-immutable-react]: React components to autoload plugins and display components from them
-* [redux-plugins-immutable-react-router](http://github.com/jcoreio/redux-plugins-immutable-react-router]: autoload [react-router](https://github.com/reactjs/react-router) route configuration from plugins
-* [redux-plugins-immutable-hot-loader](http://github.com/jcoreio/redux-plugins-immutable-hot-loader]: Webpack hot reloader for plugins
+* [redux-plugins-immutable-react](http://github.com/jcoreio/redux-plugins-immutable-react): React components to autoload plugins and display components from them
+* [redux-plugins-immutable-react-router](http://github.com/jcoreio/redux-plugins-immutable-react-router): autoload [react-router](https://github.com/reactjs/react-router) route configuration from plugins
+* [redux-plugins-immutable-hot-loader](http://github.com/jcoreio/redux-plugins-immutable-hot-loader): Webpack hot reloader for plugins
 
 ## Usage Example
 
