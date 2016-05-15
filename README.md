@@ -1,6 +1,6 @@
 # redux-plugins-immutable
 
-A feature-oriented programming framework for [Redux](redux.js.org).  Asynchronously load Redux reducers and middleware, React Components, [react-router](https://github.com/reactjs/react-router) routes, etc. in app plugins.
+A feature-oriented programming and code-splitting framework for [Redux](redux.js.org).  Asynchronously load Redux reducers and middleware, React Components, [react-router](https://github.com/reactjs/react-router) routes, etc. in app plugins, using Webpack code splitting.
 
 ## Requirements
 
