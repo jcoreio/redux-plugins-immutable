@@ -1,6 +1,6 @@
-import * as pluginActions from './lib/pluginActions';
-import pluginMiddleware from './lib/pluginMiddleware';
-import pluginReducer from './lib/pluginReducer';
-import * as pluginTypes from './lib/pluginTypes';
+import * as pluginActions from './pluginActions'
+import pluginMiddleware from './pluginMiddleware'
+import pluginReducer from './pluginReducer'
+import * as pluginTypes from './pluginTypes'
 
-export {pluginActions, pluginMiddleware, pluginReducer, pluginTypes};
+export {pluginActions, pluginMiddleware, pluginReducer, pluginTypes}

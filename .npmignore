@@ -1,4 +1,4 @@
 node_modules
-src/test
-dist/test
+test
+testlib
 spec
