@@ -11,9 +11,22 @@ import type {Middleware} from './reduxTypes'
 
 import {
   setPluginStatus,
+  ADD_PLUGIN,
   LOAD_PLUGIN,
   installPlugin
 } from './pluginActions'
+
+const addPluginHandler: Middleware = store => next => action => {
+  let result = next(action)
+
+  let plugin = action.payload
+  if (plugin) {
+    let pluginWasAdded = plugin.get('pluginWasAdded')
+    pluginWasAdded && pluginWasAdded(store)
+  }
+  
+  return result
+}
 
 const loadPluginHandler: Middleware = store => next => action => {
   next(action)
@@ -63,6 +76,7 @@ const selectPluginMiddleware: (state: Immutable.Collection) => Middleware = crea
 
 export default composeMiddleware(
   createMiddleware({
+    [ADD_PLUGIN]: addPluginHandler,
     [LOAD_PLUGIN]: loadPluginHandler
   }),
   store => next => action => selectPluginMiddleware(store.getState())(store)(next)(action)

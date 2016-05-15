@@ -3,7 +3,7 @@ import {createStore, applyMiddleware} from 'redux'
 
 import pluginMiddleware from '../src/pluginMiddleware'
 
-import {loadPlugin, installPlugin, setPluginStatus} from '../src/pluginActions'
+import {addPlugin, loadPlugin, installPlugin, setPluginStatus} from '../src/pluginActions'
 import {NOT_LOADED, LOADING, LOADED} from '../src/pluginTypes'
 
 describe('pluginMiddleware', () => {
@@ -16,6 +16,23 @@ describe('pluginMiddleware', () => {
     store.actions = actions
     return store
   }
+  
+  describe('addPluginHandler', () => {
+    it('calls pluginWasAdded iff it exists after plugin was added', done => {
+      const initialState = Immutable.Map({plugins: Immutable.Map()})
+      const store = applyMiddleware(pluginMiddleware)(createStore)((state, action) => state, initialState)
+      const plugin = Immutable.fromJS({
+        key: 'p1',
+        name: 'Plugin 1',
+        pluginWasAdded(store) {
+          expect(store.dispatch instanceof Function).toBe(true)
+          expect(store.getState instanceof Function).toBe(true)
+          done()
+        }
+      }) 
+      store.dispatch(addPlugin(plugin))
+    })
+  })
 
   describe('loadPluginHandler', () => {
     it("returns rejected Promise for missing plugin", (done) => {

@@ -1,6 +1,6 @@
 {
   "name": "redux-plugins-immutable",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "a powerful app plugin system for redux using immutable state",
   "main": "lib/index.js",
   "scripts": {
