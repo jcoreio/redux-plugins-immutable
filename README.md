@@ -1,12 +1,18 @@
 # redux-plugins-immutable
 
-Asynchronously load Redux reducers and middleware, React Components, etc. in app plugins.
+A feature-oriented programming framework for [Redux](redux.js.org).  Asynchronously load Redux reducers and middleware, React Components, [react-router](https://github.com/reactjs/react-router) routes, etc. in app plugins.
 
 ## Requirements
 
 * ES6 polyfills (corejs)
 * Your Redux state must be an Immutable.js keyed collection.  If you want to use this library
   with POJOs, you'll have to port it to do so.
+
+## Ecosystem
+
+* [redux-plugins-immutable-react](http://github.com/jcoreio/redux-plugins-immutable-react]: React components to autoload plugins and display components from them
+* [redux-plugins-immutable-react-router](http://github.com/jcoreio/redux-plugins-immutable-react-router]: autoload [react-router](https://github.com/reactjs/react-router) route configuration from plugins
+* [redux-plugins-immutable-hot-loader](http://github.com/jcoreio/redux-plugins-immutable-hot-loader]: Webpack hot reloader for plugins
 
 ## Usage Example
 
