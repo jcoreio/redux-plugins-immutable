@@ -16,7 +16,7 @@ describe('pluginMiddleware', () => {
     store.actions = actions
     return store
   }
-  
+
   describe('addPluginHandler', () => {
     it('calls pluginWasAdded iff it exists after plugin was added', done => {
       const initialState = Immutable.Map({plugins: Immutable.Map()})
@@ -29,7 +29,7 @@ describe('pluginMiddleware', () => {
           expect(store.getState instanceof Function).toBe(true)
           done()
         }
-      }) 
+      })
       store.dispatch(addPlugin(plugin))
     })
   })

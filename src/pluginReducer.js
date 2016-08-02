@@ -12,7 +12,7 @@ import type {Action, Reducer} from './reduxTypes'
 
 import {LOADED, NOT_LOADED} from './pluginTypes'
 
-const selectPluginReducers: (state: Immutable.Map) => Reducer = createSelector(
+const selectPluginReducers: (state: Immutable.Map<any, any>) => Reducer = createSelector(
   state => state.get('plugins'),
   plugins => (plugins ?
     composeReducers(...plugins.map(p => p.get('reducer')).toArray()) :
@@ -21,7 +21,7 @@ const selectPluginReducers: (state: Immutable.Map) => Reducer = createSelector(
 
 const pluginReducer: Reducer = composeReducers(
   createReducer({
-    [ADD_PLUGIN]: (state: Immutable.Map, action: Action) => {
+    [ADD_PLUGIN]: (state: Immutable.Map<any, any>, action: Action) => {
       let plugin = action.payload
       warning(plugin instanceof Immutable.Map, 'plugin must be an Immutable.Map')
       if (!(plugin instanceof Immutable.Map)) {
@@ -37,7 +37,7 @@ const pluginReducer: Reducer = composeReducers(
         return existing || plugin.update('loadStatus', loadStatus => loadStatus || NOT_LOADED)
       })
     },
-    [REPLACE_PLUGIN]: (state: Immutable.Map, action: Action) => {
+    [REPLACE_PLUGIN]: (state: Immutable.Map<any, any>, action: Action) => {
       let plugin = action.payload
       warning(plugin instanceof Immutable.Map, 'plugin must be an Immutable.Map')
       if (!(plugin instanceof Immutable.Map)) {
@@ -53,7 +53,7 @@ const pluginReducer: Reducer = composeReducers(
         return existing && plugin.update('loadStatus', loadStatus => loadStatus || NOT_LOADED)
       })
     },
-    [INSTALL_PLUGIN]: (state: Immutable.Map, action: Action) => {
+    [INSTALL_PLUGIN]: (state: Immutable.Map<any, any>, action: Action) => {
       let plugin = action.payload
       warning(plugin instanceof Immutable.Map, 'plugin must be an Immutable.Map')
       if (!(plugin instanceof Immutable.Map)) {
@@ -69,7 +69,7 @@ const pluginReducer: Reducer = composeReducers(
         return result.set('loadStatus', LOADED).delete('loadError')
       })
     },
-    [SET_PLUGIN_STATUS]: (state: Immutable.Map, action: Action) => {
+    [SET_PLUGIN_STATUS]: (state: Immutable.Map<any, any>, action: Action) => {
       let {meta: {key}, payload: {loadStatus, loadError}} = action
       return state.updateIn(['plugins', key], plugin => {
         warning(plugin, 'missing plugin for key: %s', key)
@@ -88,7 +88,7 @@ const pluginReducer: Reducer = composeReducers(
     }
   }),
   // apply the plugins' reducers
-  (state: Immutable.Map, action: Action) => selectPluginReducers(state)(state, action)
+  (state: Immutable.Map<any, any>, action: Action) => selectPluginReducers(state)(state, action)
 )
 
 export default pluginReducer

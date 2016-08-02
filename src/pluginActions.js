@@ -10,14 +10,14 @@ export const LOAD_PLUGIN = 'LOAD_PLUGIN'
 export const INSTALL_PLUGIN = 'INSTALL_PLUGIN'
 export const SET_PLUGIN_STATUS = 'SET_PLUGIN_STATUS'
 
-export function addPlugin(plugin: Immutable.Collection): Action {
+export function addPlugin(plugin: Immutable.Collection<any, any>): Action {
   return {
     type: ADD_PLUGIN,
     payload: plugin
   }
 }
 
-export function replacePlugin(plugin: Immutable.Collection): Action {
+export function replacePlugin(plugin: Immutable.Collection<any, any>): Action {
   return {
     type: REPLACE_PLUGIN,
     payload: plugin
@@ -31,7 +31,7 @@ export function loadPlugin(key: string): Action {
   }
 }
 
-export function installPlugin(plugin: Immutable.Collection): Action {
+export function installPlugin(plugin: Immutable.Collection<any, any>): Action {
   return {
     type: INSTALL_PLUGIN,
     payload: plugin

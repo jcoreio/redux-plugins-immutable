@@ -24,7 +24,7 @@ const addPluginHandler: Middleware = store => next => action => {
     let pluginWasAdded = plugin.get('pluginWasAdded')
     pluginWasAdded && pluginWasAdded(store)
   }
-  
+
   return result
 }
 

@@ -75,7 +75,8 @@ describe('pluginReducer', () => {
         plugins: {
           p1: {
             key: 'p1',
-            name: 'Plugin 1'
+            name: 'Plugin 1',
+            loadStatus: LOADED
           }
         }
       })
