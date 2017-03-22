@@ -9,6 +9,9 @@ import {NOT_LOADED, LOADED} from '../src/pluginTypes'
 import {addPlugin, replacePlugin, installPlugin, setPluginStatus} from '../src/pluginActions'
 
 describe('pluginReducer', () => {
+  it('applies initial state', () => {
+    expect(pluginReducer(undefined, {type: 'fake'})).toBeDefined()
+  })
   it('works when there are no plugins', () => {
     let state = Immutable.Map()
     state = pluginReducer(state, {type: 'fake'})

@@ -20,7 +20,7 @@ const selectPluginReducers: (state: Immutable.Map<any, any>) => Reducer = create
 )
 
 const pluginReducer: Reducer = composeReducers(
-  createReducer({
+  createReducer(Immutable.Map(), {
     [ADD_PLUGIN]: (state: Immutable.Map<any, any>, action: Action) => {
       let plugin = action.payload
       warning(plugin instanceof Immutable.Map, 'plugin must be an Immutable.Map')
